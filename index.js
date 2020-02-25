@@ -4,7 +4,7 @@ const figlet = require('figlet');
 
 // lib imports
 const files = require('./lib/files');
-const inquirer  = require('./lib/inquirer');
+const github  = require('./lib/github');
 
 clear();
 
@@ -23,10 +23,13 @@ if (files.directoryExists('.git')) {
     process.exit();
 }
 
-// get git credentials
+// run program
 const run = async () => {
-  const credentials = await inquirer.askGithubCredentials();
-  console.log(credentials);
-};
+    let token = github.getStoredGithubToken();
+    if(!token) {
+      token = await github.getPersonalAccesToken();
+    }
+    console.log(token);
+  };
 
 run();
