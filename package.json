@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "bin": {
+    "ginit": "./index.js"
+  },  
+  "keywords": [
+    "git",
+    "CLI"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
