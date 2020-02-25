@@ -23,6 +23,21 @@ if (files.directoryExists('.git')) {
     process.exit();
 }
 
+// get github token
+const getGithubToken = async () => {
+    // Fetch token from config store
+    let token = github.getStoredGithubToken();
+    if(token) {
+      return token;
+    }
+  
+    // No token found, use credentials to access GitHub account
+    token = await github.getPersonalAccesToken();
+  
+    return token;
+  };  
+
+
 // run program
 const run = async () => {
     let token = github.getStoredGithubToken();
