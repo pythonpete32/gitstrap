@@ -1,0 +1,2 @@
+# Gitstrap
+ tool for initializing a Git repository. Sure, it’ll run git init under the hood, but it’ll do more than just that. It will also create a remote repository on GitHub right from the command line, allow the user to interactively create a .gitignore file, and finally perform an initial commit and push.
